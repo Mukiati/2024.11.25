@@ -25,8 +25,32 @@ namespace _2024._11._25
         public MainWindow()
         {
             InitializeComponent();
+            CreateTextBlock();
         }
+        async void CreateTextBlock()
+        {
+            almak.Children.Clear();
+            HttpClient client = new HttpClient();
+            string url = "http://127.0.0.1:4444/alma";
+            try
+            {
+                HttpResponseMessage response = await client.GetAsync(url);
+                string stringResponse = await response.Content.ReadAsStringAsync();
+                List<almaclass> almalist = JsonConvert.DeserializeObject<List<almaclass>>(stringResponse);
+                foreach (almaclass item in almalist)
+                {
+                    TextBlock oneblock = new TextBlock();
+                    oneblock.Text = $"Alma neve: {item.type}, alma ára: {item.price}";
+                    almak.Children.Add(oneblock);
+                }
+            }
+            catch (Exception e)
+            {
 
+                MessageBox.Show(e.Message);
+            }
+
+        }
         async void Addapple(object s, EventArgs e)
         {
             HttpClient client = new HttpClient();
@@ -44,16 +68,13 @@ namespace _2024._11._25
 
                 HttpResponseMessage response = await client.PostAsync(url, data);
                 response.EnsureSuccessStatusCode();
+                CreateTextBlock();
             }
             catch (Exception error)
             {
 
                 MessageBox.Show(error.Message);
             }
-
-           
-
-           
             //MessageBox.Show($"Alma neve: {nev.Text} , Alma ára: {ar.Text}");
         }
     }

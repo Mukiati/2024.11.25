@@ -5,23 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_2024._11._25"
         mc:Ignorable="d"
-        Title="MainWindow" Height="300" Width="400">
+        Title="MainWindow" Height="400" Width="600">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
-            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Row="0" Grid.Column="0" FontSize="30" TextAlignment="Center" VerticalAlignment="Center">Alma Neve:</TextBlock>
-        <TextBlock Grid.Row="1" Grid.Column="0" FontSize="30" TextAlignment="Center" VerticalAlignment="Center">Alma Ára:</TextBlock>
-        <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" FontSize="45" Click="Addapple">HOZZÁADÁS</Button>
-        <TextBox  Name ="nev" Grid.Column="1" Grid.Row="0" FontSize="24" VerticalAlignment="Center">IDARED</TextBox>
-        <TextBox  Name ="ar" Grid.Column="1" Grid.Row="1" FontSize="24" VerticalAlignment="Center">20</TextBox>
-
-
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" FontSize="30" TextAlignment="Center" VerticalAlignment="Center">Alma Neve:</TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="0" FontSize="30" TextAlignment="Center" VerticalAlignment="Center">Alma Ára:</TextBlock>
+            <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" FontSize="45" Click="Addapple">HOZZÁADÁS</Button>
+            <TextBox  Name ="nev" Grid.Column="1" Grid.Row="0" FontSize="24" VerticalAlignment="Center">IDARED</TextBox>
+            <TextBox  Name ="ar" Grid.Column="1" Grid.Row="1" FontSize="24" VerticalAlignment="Center">20</TextBox>
+        </Grid>
+        <StackPanel  Grid.Row="1"  Name="almak">
+           
+        </StackPanel>
+        
     </Grid>
+    
 </Window>
